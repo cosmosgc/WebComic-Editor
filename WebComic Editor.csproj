@@ -104,7 +104,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Scripts\tinymce\langs\README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -115,133 +114,13 @@
   <ItemGroup>
     <None Include="Resources\Image.png" />
     <None Include="Resources\ImageLoader.png" />
-    <Content Include="Scripts\tinymce\icons\default\icons.js" />
-    <Content Include="Scripts\tinymce\icons\default\icons.min.js" />
-    <Content Include="Scripts\tinymce\license.txt" />
-    <Content Include="Scripts\tinymce\models\dom\model.js" />
-    <Content Include="Scripts\tinymce\models\dom\model.min.js" />
-    <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\anchor\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\autolink\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\autosave\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\charmap\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\codesample\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\codesample\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\code\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\directionality\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojiimages.js" />
-    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojiimages.min.js" />
-    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojis.js" />
-    <Content Include="Scripts\tinymce\plugins\emoticons\js\emojis.min.js" />
-    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\help\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\help\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\image\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\importcss\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\link\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\lists\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\media\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\preview\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\quickbars\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\quickbars\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\save\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\table\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\template\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
-    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.js" />
-    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
-    <Content Include="Scripts\tinymce\skins\content\dark\content.css" />
-    <Content Include="Scripts\tinymce\skins\content\dark\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\content\default\content.css" />
-    <Content Include="Scripts\tinymce\skins\content\default\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\content\document\content.css" />
-    <Content Include="Scripts\tinymce\skins\content\document\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\content\tinymce-5-dark\content.css" />
-    <Content Include="Scripts\tinymce\skins\content\tinymce-5-dark\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\content\tinymce-5\content.css" />
-    <Content Include="Scripts\tinymce\skins\content\tinymce-5\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\content\writer\content.css" />
-    <Content Include="Scripts\tinymce\skins\content\writer\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.inline.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.shadowdom.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\content.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\content.inline.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\content.inline.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.shadowdom.css" />
-    <Content Include="Scripts\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\content.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\content.inline.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\skin.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\content.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\content.inline.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\content.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\skin.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\skin.min.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\skin.shadowdom.css" />
-    <Content Include="Scripts\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
-    <Content Include="Scripts\tinymce\themes\silver\theme.js" />
-    <Content Include="Scripts\tinymce\themes\silver\theme.min.js" />
-    <Content Include="Scripts\tinymce\tinymce.js" />
-    <Content Include="Scripts\tinymce\tinymce.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\tinymce\tinymce.d.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\TinyMCE.6.1.2\build\TinyMCE.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\TinyMCE.6.1.2\build\TinyMCE.targets'))" />
     <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.1340-prerelease\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.1340-prerelease\build\Microsoft.Web.WebView2.targets'))" />
   </Target>
-  <Import Project="packages\TinyMCE.6.1.2\build\TinyMCE.targets" Condition="Exists('packages\TinyMCE.6.1.2\build\TinyMCE.targets')" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.1340-prerelease\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1340-prerelease\build\Microsoft.Web.WebView2.targets')" />
 </Project>
