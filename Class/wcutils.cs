@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,24 @@ namespace WebComic_Editor.Class
             prompt.AcceptButton = confirmation;
 
             return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
+        }
+        public static string SkorperLogDiv()
+        {
+            string text = "<div class=\"spoiler closed\">\r\n" +
+                "   <div style=\"text-align: center;\"><input type=\"button\" " +
+                "value=\"Open Skorpelog\" data-open=\"Open Skorpelog\" " +
+                "data-close=\"Close Skorpelog\"></div>\r\n   " +
+                "</div>\r\n</div>";
+
+            return text;
+        }
+        public static string SkorperLogChat(Color color)
+        {
+            string text = "<span style=\"color: " +
+                "#"+ color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2") +
+                ";\">WA: Man-</span>" +
+                "<br>";
+            return text;
         }
     }
 }

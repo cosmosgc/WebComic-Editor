@@ -25,10 +25,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Web.UI.WebControls;
 
 namespace WebComic_Editor
 {
-    public partial class Form1 : Form //MaterialForm
+    public partial class Form1 : Form
     {
         public string projectName = "Sem Nome";
         public string sourceURL;
@@ -42,16 +43,10 @@ namespace WebComic_Editor
             InitializeComponent();
             toolTip1.SetToolTip(htmlPasteImageBtn, "Cola uma imagem no html");
             toolTip1.SetToolTip(htmlAddImageBtn, "Add tag imagem no html");
-
-            /*
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-        */
+            
         }
 
-        private void fastColoredTextBox1_TextChangedDelayed(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
+        private void FastColoredTextBox1_TextChangedDelayed(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
         {
             htmlPreview.DocumentText = fastColoredTextBox1.Text;
             if (WebComic.Count > 0)
@@ -122,8 +117,16 @@ namespace WebComic_Editor
 
         private void updateComicData()
         {
-            WebComicGrid.DataSource = null;
-            WebComicGrid.DataSource = WebComic;
+
+            //WebComicGrid.DataSource = null;
+            var bindingList = new BindingList<mspa>(WebComic);
+            var source = new BindingSource(bindingList, null);
+            WebComicGrid.DataSource = source;
+            //WebComicGrid.DataSource = WebComic;
+            WebComicGrid.Update();
+            WebComicGrid.Refresh();
+
+
             Form1.ActiveForm.Text = projectName;
         }
 
@@ -149,8 +152,9 @@ namespace WebComic_Editor
 
         private void WebComicGrid_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if(WebComic.Count > 0)
+            if(WebComic.Count > e.RowIndex)
             {
+                Log("Selecionou a Row: " + e.RowIndex);
                 mspa selectedPage = WebComic[e.RowIndex];
                 PagePreview.DocumentText = selectedPage.content;
                 fastColoredTextBox1.Text = selectedPage.content;
@@ -245,6 +249,7 @@ namespace WebComic_Editor
         {
             WebComic.Clear();
             updateComicData();
+            DebugLog.Text += "Nova WebComic preparada";
         }
 
         
@@ -279,10 +284,58 @@ namespace WebComic_Editor
 
         private void WebComicGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            mspa selectedPage = WebComic[e.RowIndex];
-            selectedPage.command = WebComicGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
-            fastColoredTextBox1.Text = selectedPage.command;
-            pageSelected = e.RowIndex;
+            if (WebComic.Count < e.RowIndex)
+            {
+                mspa selectedPage = WebComic[e.RowIndex];
+                selectedPage.command = WebComicGrid[e.ColumnIndex, e.RowIndex].Value.ToString();
+                fastColoredTextBox1.Text = selectedPage.command;
+                pageSelected = e.RowIndex;
+            }
+        }
+
+        private void createNewPageBtn_Click(object sender, EventArgs e)
+        {
+            mspa newPage = new mspa()
+            {
+                page = WebComic.Count+1,
+                command = "",
+                content = ""
+            };
+            WebComic.Add(newPage);
+            Log("Nova pagina: " + newPage.page + " | " + newPage);
+            updateComicData();
+            WebComicGrid.ClearSelection();
+            WebComicGrid.FirstDisplayedScrollingRowIndex = WebComicGrid.RowCount - 1;
+            WebComicGrid.Rows[WebComicGrid.RowCount-1].Selected = true;
+        }
+        public void Log(string toLog)
+        {
+            DebugLog.Text += toLog + "\n";
+            DebugLog.SelectionStart = DebugLog.Text.Length;
+            DebugLog.ScrollToCaret();
+        }
+
+        private void htmlImage_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void htmlImageBtn_Click(object sender, EventArgs e)
+        {
+            int cursorPos = fastColoredTextBox1.SelectionStart;
+            fastColoredTextBox1.InsertText("<img src=\"\">");
+        }
+
+        private void CreateChatSystemBtn_Click(object sender, EventArgs e)
+        {
+            string text = "";
+            Log(ChatSystemDropDown.Text);
+            if(ChatSystemDropDown.Text == "SkerperLog")
+            {
+                text = Wcutils.SkorperLogDiv();
+            }
+            fastColoredTextBox1.InsertText(text);
         }
     }
 }
