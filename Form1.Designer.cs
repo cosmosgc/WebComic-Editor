@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -46,28 +46,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.createNewPageBtn = new System.Windows.Forms.Button();
-            this.PagePreview = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.htmlPreview = new System.Windows.Forms.WebBrowser();
+            this.htmlPreview = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.htmlAddImageBtn = new System.Windows.Forms.Button();
-            this.htmlPasteImageBtn = new System.Windows.Forms.Button();
+            this.colorPreviewPanel = new System.Windows.Forms.Panel();
             this.MSPAtoolBar = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.htmlImageBtn = new System.Windows.Forms.ToolStripButton();
             this.pasteImageBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ChatSystemDropDown = new System.Windows.Forms.ToolStripDropDownButton();
-            this.skerperlogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.ChatSystemDropDown = new System.Windows.Forms.ToolStripComboBox();
             this.CreateChatSystemBtn = new System.Windows.Forms.ToolStripButton();
-            this.createChatTextBtn = new System.Windows.Forms.ToolStripButton();
+            this.ColorPickerBtn = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.ChatCharName = new System.Windows.Forms.ToolStripTextBox();
+            this.createChatTextBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.cssEffectSelector = new System.Windows.Forms.ToolStripComboBox();
+            this.EffectBtn = new System.Windows.Forms.ToolStripButton();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bonitificarHTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traduzirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inglesPortuguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -104,6 +109,8 @@
             this.publicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.publicarProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarPublicaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.janelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -111,8 +118,7 @@
             this.StatusTab = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.DebugLog = new System.Windows.Forms.RichTextBox();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.ColorPickerBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            this.PagePreview = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -130,6 +136,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.htmlPreview)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.MSPAtoolBar.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -162,6 +169,7 @@
             this.splitContainer7.SuspendLayout();
             this.StatusTab.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PagePreview)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -172,9 +180,10 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(841, 315);
+            this.tabControl1.Size = new System.Drawing.Size(894, 392);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -182,10 +191,11 @@
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Controls.Add(this.flowLayoutPanel4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(833, 289);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Size = new System.Drawing.Size(886, 364);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "WebComic";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -194,7 +204,8 @@
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(4, 3);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -205,17 +216,18 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.PagePreview);
-            this.splitContainer1.Size = new System.Drawing.Size(825, 281);
-            this.splitContainer1.SplitterDistance = 274;
+            this.splitContainer1.Size = new System.Drawing.Size(876, 356);
+            this.splitContainer1.SplitterDistance = 290;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // WebComicGrid
             // 
             this.WebComicGrid.AllowUserToAddRows = false;
             this.WebComicGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.WebComicGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.WebComicGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.WebComicGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.WebComicGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WebComicGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -223,19 +235,20 @@
             this.command,
             this.content});
             this.WebComicGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WebComicGrid.Location = new System.Drawing.Point(0, 29);
+            this.WebComicGrid.Location = new System.Drawing.Point(0, 60);
+            this.WebComicGrid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.WebComicGrid.Name = "WebComicGrid";
             this.WebComicGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.WebComicGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WebComicGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WebComicGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.WebComicGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.DimGray;
             this.WebComicGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.WebComicGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.WebComicGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.WebComicGrid.Size = new System.Drawing.Size(272, 250);
+            this.WebComicGrid.Size = new System.Drawing.Size(288, 294);
             this.WebComicGrid.TabIndex = 0;
             this.WebComicGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.WebComicGrid_CellEndEdit);
             this.WebComicGrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.WebComicGrid_RowEnter);
@@ -252,8 +265,8 @@
             // 
             this.command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.command.DataPropertyName = "command";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.command.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.command.DefaultCellStyle = dataGridViewCellStyle5;
             this.command.HeaderText = "Comando";
             this.command.Name = "command";
             // 
@@ -275,68 +288,66 @@
             this.flowLayoutPanel1.Controls.Add(this.createNewPageBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(272, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(288, 60);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(4, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.Size = new System.Drawing.Size(23, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "De";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(30, 3);
+            this.numericUpDown1.Location = new System.Drawing.Point(35, 3);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(66, 21);
             this.numericUpDown1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 0);
+            this.label1.Location = new System.Drawing.Point(109, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.Size = new System.Drawing.Size(27, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Até";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(122, 3);
+            this.numericUpDown2.Location = new System.Drawing.Point(144, 3);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDown2.Size = new System.Drawing.Size(68, 21);
             this.numericUpDown2.TabIndex = 1;
             // 
             // createNewPageBtn
             // 
             this.createNewPageBtn.AutoSize = true;
-            this.createNewPageBtn.Location = new System.Drawing.Point(186, 3);
+            this.createNewPageBtn.Location = new System.Drawing.Point(4, 30);
+            this.createNewPageBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.createNewPageBtn.Name = "createNewPageBtn";
-            this.createNewPageBtn.Size = new System.Drawing.Size(83, 23);
+            this.createNewPageBtn.Size = new System.Drawing.Size(99, 27);
             this.createNewPageBtn.TabIndex = 4;
             this.createNewPageBtn.Text = "Nova Pagina";
             this.createNewPageBtn.UseVisualStyleBackColor = true;
             this.createNewPageBtn.Click += new System.EventHandler(this.createNewPageBtn_Click);
             // 
-            // PagePreview
-            // 
-            this.PagePreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PagePreview.Location = new System.Drawing.Point(0, 0);
-            this.PagePreview.MinimumSize = new System.Drawing.Size(20, 20);
-            this.PagePreview.Name = "PagePreview";
-            this.PagePreview.Size = new System.Drawing.Size(545, 279);
-            this.PagePreview.TabIndex = 0;
-            // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(4, 3);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(825, 281);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(876, 356);
             this.flowLayoutPanel4.TabIndex = 4;
             // 
             // tabPage2
@@ -344,9 +355,10 @@
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
             this.tabPage2.Controls.Add(this.menuStrip2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(833, 289);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage2.Size = new System.Drawing.Size(886, 366);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editar Pagina";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -358,19 +370,21 @@
             this.tableLayoutPanel1.Controls.Add(this.splitContainer2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 27);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 27);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(827, 259);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(878, 336);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // splitContainer2
             // 
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 35);
+            this.splitContainer2.Location = new System.Drawing.Point(4, 39);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -380,8 +394,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.htmlPreview);
-            this.splitContainer2.Size = new System.Drawing.Size(821, 221);
-            this.splitContainer2.SplitterDistance = 384;
+            this.splitContainer2.Size = new System.Drawing.Size(958, 294);
+            this.splitContainer2.SplitterDistance = 448;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
             // fastColoredTextBox1
@@ -398,7 +413,7 @@
         '\'',
         '\''};
             this.fastColoredTextBox1.AutoIndentCharsPatterns = "";
-            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(0, 140);
+            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(0, 126);
             this.fastColoredTextBox1.BackBrush = null;
             this.fastColoredTextBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.fastColoredTextBox1.CharHeight = 14;
@@ -413,93 +428,97 @@
             this.fastColoredTextBox1.LeftBracket = '<';
             this.fastColoredTextBox1.LeftBracket2 = '(';
             this.fastColoredTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.fastColoredTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.fastColoredTextBox1.Name = "fastColoredTextBox1";
             this.fastColoredTextBox1.Paddings = new System.Windows.Forms.Padding(0);
             this.fastColoredTextBox1.RightBracket = '>';
             this.fastColoredTextBox1.RightBracket2 = ')';
             this.fastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fastColoredTextBox1.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox1.ServiceColors")));
-            this.fastColoredTextBox1.Size = new System.Drawing.Size(382, 219);
+            this.fastColoredTextBox1.ShowCaretWhenInactive = true;
+            this.fastColoredTextBox1.ShowFoldingLines = true;
+            this.fastColoredTextBox1.Size = new System.Drawing.Size(446, 292);
             this.fastColoredTextBox1.TabIndex = 0;
             this.fastColoredTextBox1.Text = resources.GetString("fastColoredTextBox1.Text");
             this.fastColoredTextBox1.WordWrap = true;
+            this.fastColoredTextBox1.WordWrapIndent = 1;
             this.fastColoredTextBox1.Zoom = 100;
             this.fastColoredTextBox1.TextChangedDelayed += new System.EventHandler<FastColoredTextBoxNS.TextChangedEventArgs>(this.FastColoredTextBox1_TextChangedDelayed);
+            this.fastColoredTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fastColoredTextBox1_KeyDown);
             // 
             // htmlPreview
             // 
+            this.htmlPreview.AllowExternalDrop = true;
+            this.htmlPreview.CreationProperties = null;
+            this.htmlPreview.DefaultBackgroundColor = System.Drawing.Color.White;
             this.htmlPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.htmlPreview.Location = new System.Drawing.Point(0, 0);
-            this.htmlPreview.MinimumSize = new System.Drawing.Size(20, 20);
             this.htmlPreview.Name = "htmlPreview";
-            this.htmlPreview.ScriptErrorsSuppressed = true;
-            this.htmlPreview.Size = new System.Drawing.Size(431, 219);
+            this.htmlPreview.Size = new System.Drawing.Size(503, 292);
             this.htmlPreview.TabIndex = 0;
+            this.htmlPreview.ZoomFactor = 1D;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AllowDrop = true;
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel2.Controls.Add(this.htmlAddImageBtn);
-            this.flowLayoutPanel2.Controls.Add(this.htmlPasteImageBtn);
+            this.flowLayoutPanel2.Controls.Add(this.colorPreviewPanel);
             this.flowLayoutPanel2.Controls.Add(this.MSPAtoolBar);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(827, 32);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(966, 36);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // htmlAddImageBtn
+            // colorPreviewPanel
             // 
-            this.htmlAddImageBtn.BackgroundImage = global::WebComic_Editor.Properties.Resources.Image;
-            this.htmlAddImageBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.htmlAddImageBtn.CausesValidation = false;
-            this.htmlAddImageBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.htmlAddImageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.htmlAddImageBtn.Location = new System.Drawing.Point(3, 3);
-            this.htmlAddImageBtn.Name = "htmlAddImageBtn";
-            this.htmlAddImageBtn.Size = new System.Drawing.Size(30, 26);
-            this.htmlAddImageBtn.TabIndex = 0;
-            this.htmlAddImageBtn.UseVisualStyleBackColor = true;
-            this.htmlAddImageBtn.Click += new System.EventHandler(this.htmlAddImageBtn_Click);
-            // 
-            // htmlPasteImageBtn
-            // 
-            this.htmlPasteImageBtn.BackgroundImage = global::WebComic_Editor.Properties.Resources.ImageLoader;
-            this.htmlPasteImageBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.htmlPasteImageBtn.CausesValidation = false;
-            this.htmlPasteImageBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.htmlPasteImageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.htmlPasteImageBtn.Location = new System.Drawing.Point(39, 3);
-            this.htmlPasteImageBtn.Name = "htmlPasteImageBtn";
-            this.htmlPasteImageBtn.Size = new System.Drawing.Size(30, 26);
-            this.htmlPasteImageBtn.TabIndex = 1;
-            this.htmlPasteImageBtn.UseVisualStyleBackColor = true;
-            this.htmlPasteImageBtn.Click += new System.EventHandler(this.htmlPasteImageBtn_Click);
+            this.colorPreviewPanel.BackColor = System.Drawing.Color.Salmon;
+            this.colorPreviewPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.colorPreviewPanel.Location = new System.Drawing.Point(4, 3);
+            this.colorPreviewPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.colorPreviewPanel.Name = "colorPreviewPanel";
+            this.colorPreviewPanel.Size = new System.Drawing.Size(30, 30);
+            this.colorPreviewPanel.TabIndex = 3;
+            this.colorPreviewPanel.DoubleClick += new System.EventHandler(this.colorPreviewPanel_DoubleClick);
             // 
             // MSPAtoolBar
             // 
-            this.MSPAtoolBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MSPAtoolBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.SetFlowBreak(this.MSPAtoolBar, true);
+            this.MSPAtoolBar.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MSPAtoolBar.GripMargin = new System.Windows.Forms.Padding(0);
+            this.MSPAtoolBar.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.MSPAtoolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel3,
             this.htmlImageBtn,
             this.pasteImageBtn,
             this.toolStripSeparator1,
+            this.toolStripLabel2,
             this.ChatSystemDropDown,
             this.CreateChatSystemBtn,
             this.ColorPickerBtn,
             this.toolStripLabel1,
-            this.toolStripTextBox1,
-            this.createChatTextBtn});
+            this.ChatCharName,
+            this.createChatTextBtn,
+            this.toolStripSeparator2,
+            this.toolStripLabel4,
+            this.cssEffectSelector,
+            this.EffectBtn});
             this.MSPAtoolBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MSPAtoolBar.Location = new System.Drawing.Point(72, 0);
+            this.MSPAtoolBar.Location = new System.Drawing.Point(38, 0);
             this.MSPAtoolBar.Name = "MSPAtoolBar";
-            this.MSPAtoolBar.Size = new System.Drawing.Size(341, 32);
+            this.MSPAtoolBar.Size = new System.Drawing.Size(737, 36);
             this.MSPAtoolBar.Stretch = true;
             this.MSPAtoolBar.TabIndex = 2;
             this.MSPAtoolBar.Text = "toolStrip1";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(59, 33);
+            this.toolStripLabel3.Text = "Imagem";
             // 
             // htmlImageBtn
             // 
@@ -507,7 +526,7 @@
             this.htmlImageBtn.Image = global::WebComic_Editor.Properties.Resources.Image;
             this.htmlImageBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.htmlImageBtn.Name = "htmlImageBtn";
-            this.htmlImageBtn.Size = new System.Drawing.Size(23, 29);
+            this.htmlImageBtn.Size = new System.Drawing.Size(23, 33);
             this.htmlImageBtn.Text = "toolStripButton1";
             this.htmlImageBtn.ToolTipText = "Add tag imagem no html";
             this.htmlImageBtn.Click += new System.EventHandler(this.htmlImageBtn_Click);
@@ -518,79 +537,149 @@
             this.pasteImageBtn.Image = global::WebComic_Editor.Properties.Resources.ImageLoader;
             this.pasteImageBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteImageBtn.Name = "pasteImageBtn";
-            this.pasteImageBtn.Size = new System.Drawing.Size(23, 29);
+            this.pasteImageBtn.Size = new System.Drawing.Size(23, 33);
             this.pasteImageBtn.Text = "toolStripButton1";
             this.pasteImageBtn.ToolTipText = "Cola uma imagem no html";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 36);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(36, 33);
+            this.toolStripLabel2.Text = "Chat";
             // 
             // ChatSystemDropDown
             // 
-            this.ChatSystemDropDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ChatSystemDropDown.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.skerperlogToolStripMenuItem});
-            this.ChatSystemDropDown.Image = ((System.Drawing.Image)(resources.GetObject("ChatSystemDropDown.Image")));
-            this.ChatSystemDropDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ChatSystemDropDown.Items.AddRange(new object[] {
+            "SkerperLog",
+            "AmongUs",
+            "Earthbound",
+            "gimpact",
+            "aol",
+            "dcord2",
+            "TF2",
+            "PCTERMINAL",
+            "YBComment",
+            "falloutvgnorm",
+            "hylics2",
+            "jazztronauts",
+            "phone",
+            "minecraft",
+            "Detroit",
+            "Undertale Menu",
+            "robloxScore"});
             this.ChatSystemDropDown.Name = "ChatSystemDropDown";
-            this.ChatSystemDropDown.Size = new System.Drawing.Size(29, 29);
-            this.ChatSystemDropDown.Text = "toolStripDropDownButton1";
-            // 
-            // skerperlogToolStripMenuItem
-            // 
-            this.skerperlogToolStripMenuItem.Name = "skerperlogToolStripMenuItem";
-            this.skerperlogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.skerperlogToolStripMenuItem.Text = "Skerperlog";
+            this.ChatSystemDropDown.Size = new System.Drawing.Size(140, 36);
+            this.ChatSystemDropDown.Text = "SkerperLog";
+            this.ChatSystemDropDown.ToolTipText = "Sistema de chat gerado";
             // 
             // CreateChatSystemBtn
             // 
             this.CreateChatSystemBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CreateChatSystemBtn.Image = ((System.Drawing.Image)(resources.GetObject("CreateChatSystemBtn.Image")));
+            this.CreateChatSystemBtn.Image = global::WebComic_Editor.Properties.Resources.Button;
             this.CreateChatSystemBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CreateChatSystemBtn.Name = "CreateChatSystemBtn";
-            this.CreateChatSystemBtn.Size = new System.Drawing.Size(23, 29);
+            this.CreateChatSystemBtn.Size = new System.Drawing.Size(23, 33);
             this.CreateChatSystemBtn.Text = "toolStripButton2";
             this.CreateChatSystemBtn.Click += new System.EventHandler(this.CreateChatSystemBtn_Click);
             // 
-            // createChatTextBtn
+            // ColorPickerBtn
             // 
-            this.createChatTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.createChatTextBtn.Image = ((System.Drawing.Image)(resources.GetObject("createChatTextBtn.Image")));
-            this.createChatTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.createChatTextBtn.Name = "createChatTextBtn";
-            this.createChatTextBtn.Size = new System.Drawing.Size(23, 29);
-            this.createChatTextBtn.Text = "toolStripButton2";
+            this.ColorPickerBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ColorPickerBtn.Image = global::WebComic_Editor.Properties.Resources.ColorWheel;
+            this.ColorPickerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ColorPickerBtn.Name = "ColorPickerBtn";
+            this.ColorPickerBtn.Size = new System.Drawing.Size(31, 33);
+            this.ColorPickerBtn.Text = "ColorPicker";
+            this.ColorPickerBtn.Click += new System.EventHandler(this.ColorPickerBtn_Click);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(40, 29);
+            this.toolStripLabel1.Size = new System.Drawing.Size(45, 33);
             this.toolStripLabel1.Text = "Nome";
             // 
-            // toolStripTextBox1
+            // ChatCharName
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 32);
+            this.ChatCharName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ChatCharName.Name = "ChatCharName";
+            this.ChatCharName.Size = new System.Drawing.Size(116, 36);
+            // 
+            // createChatTextBtn
+            // 
+            this.createChatTextBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.createChatTextBtn.Image = global::WebComic_Editor.Properties.Resources.Team;
+            this.createChatTextBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.createChatTextBtn.Name = "createChatTextBtn";
+            this.createChatTextBtn.Size = new System.Drawing.Size(23, 33);
+            this.createChatTextBtn.Text = "toolStripButton2";
+            this.createChatTextBtn.Click += new System.EventHandler(this.createChatTextBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 36);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(48, 33);
+            this.toolStripLabel4.Text = "Efeitos";
+            // 
+            // cssEffectSelector
+            // 
+            this.cssEffectSelector.Items.AddRange(new object[] {
+            "glitch",
+            "COMBOBOX",
+            "shake",
+            "RAINBOW",
+            "Diary",
+            "Minecraft Button",
+            "Animar texto sequencial"});
+            this.cssEffectSelector.Name = "cssEffectSelector";
+            this.cssEffectSelector.Size = new System.Drawing.Size(121, 36);
+            this.cssEffectSelector.Text = "glitch";
+            // 
+            // EffectBtn
+            // 
+            this.EffectBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.EffectBtn.Image = global::WebComic_Editor.Properties.Resources.Effect;
+            this.EffectBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EffectBtn.Name = "EffectBtn";
+            this.EffectBtn.Size = new System.Drawing.Size(23, 33);
+            this.EffectBtn.Text = "toolStripButton1";
+            this.EffectBtn.Click += new System.EventHandler(this.EffectBtn_Click);
             // 
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarToolStripMenuItem,
             this.traduzirToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip2.Location = new System.Drawing.Point(4, 3);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(827, 24);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(878, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // editarToolStripMenuItem
             // 
+            this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bonitificarHTMLToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
+            // 
+            // bonitificarHTMLToolStripMenuItem
+            // 
+            this.bonitificarHTMLToolStripMenuItem.Name = "bonitificarHTMLToolStripMenuItem";
+            this.bonitificarHTMLToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.bonitificarHTMLToolStripMenuItem.Text = "Bonitificar HTML";
+            this.bonitificarHTMLToolStripMenuItem.Click += new System.EventHandler(this.bonitificarHTMLToolStripMenuItem_Click);
             // 
             // traduzirToolStripMenuItem
             // 
@@ -611,9 +700,10 @@
             // 
             this.tabPage3.Controls.Add(this.splitContainer4);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(833, 289);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage3.Size = new System.Drawing.Size(886, 366);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Download";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -622,7 +712,8 @@
             // 
             this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer4.Location = new System.Drawing.Point(4, 3);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -634,8 +725,9 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer4.Size = new System.Drawing.Size(827, 283);
-            this.splitContainer4.SplitterDistance = 25;
+            this.splitContainer4.Size = new System.Drawing.Size(878, 360);
+            this.splitContainer4.SplitterDistance = 31;
+            this.splitContainer4.SplitterWidth = 5;
             this.splitContainer4.TabIndex = 1;
             // 
             // flowLayoutPanel3
@@ -651,8 +743,9 @@
             this.flowLayoutPanel3.Controls.Add(this.button1);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(825, 23);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(876, 29);
             this.flowLayoutPanel3.TabIndex = 8;
             // 
             // sourceSelect
@@ -662,65 +755,73 @@
             "mspfa",
             "Vast Error",
             "custom"});
-            this.sourceSelect.Location = new System.Drawing.Point(3, 3);
+            this.sourceSelect.Location = new System.Drawing.Point(4, 3);
+            this.sourceSelect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.sourceSelect.Name = "sourceSelect";
-            this.sourceSelect.Size = new System.Drawing.Size(121, 21);
+            this.sourceSelect.Size = new System.Drawing.Size(140, 23);
             this.sourceSelect.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(130, 0);
+            this.label3.Location = new System.Drawing.Point(152, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(47, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Pagina";
             // 
             // downloadNumberStart
             // 
-            this.downloadNumberStart.Location = new System.Drawing.Point(176, 3);
+            this.downloadNumberStart.Location = new System.Drawing.Point(207, 3);
+            this.downloadNumberStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.downloadNumberStart.Name = "downloadNumberStart";
-            this.downloadNumberStart.Size = new System.Drawing.Size(59, 20);
+            this.downloadNumberStart.Size = new System.Drawing.Size(69, 21);
             this.downloadNumberStart.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 0);
+            this.label4.Location = new System.Drawing.Point(284, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.Size = new System.Drawing.Size(27, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Até";
             // 
             // downloadNumberFinish
             // 
-            this.downloadNumberFinish.Location = new System.Drawing.Point(270, 3);
+            this.downloadNumberFinish.Location = new System.Drawing.Point(319, 3);
+            this.downloadNumberFinish.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.downloadNumberFinish.Name = "downloadNumberFinish";
-            this.downloadNumberFinish.Size = new System.Drawing.Size(59, 20);
+            this.downloadNumberFinish.Size = new System.Drawing.Size(69, 21);
             this.downloadNumberFinish.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(335, 0);
+            this.label5.Location = new System.Drawing.Point(396, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(62, 15);
             this.label5.TabIndex = 7;
             this.label5.Text = "ComicRef";
             // 
             // ComicRef
             // 
-            this.ComicRef.Location = new System.Drawing.Point(394, 3);
+            this.ComicRef.Location = new System.Drawing.Point(466, 3);
+            this.ComicRef.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComicRef.Name = "ComicRef";
-            this.ComicRef.Size = new System.Drawing.Size(285, 23);
+            this.ComicRef.Size = new System.Drawing.Size(332, 26);
             this.ComicRef.TabIndex = 6;
             this.ComicRef.Text = "";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(685, 3);
+            this.button1.Location = new System.Drawing.Point(4, 35);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(88, 27);
             this.button1.TabIndex = 5;
             this.button1.Text = "Baixar";
             this.button1.UseVisualStyleBackColor = true;
@@ -730,6 +831,7 @@
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -739,8 +841,9 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer3.Size = new System.Drawing.Size(825, 252);
-            this.splitContainer3.SplitterDistance = 416;
+            this.splitContainer3.Size = new System.Drawing.Size(876, 322);
+            this.splitContainer3.SplitterDistance = 441;
+            this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
             // fastColoredTextBox2
@@ -768,18 +871,20 @@
             this.fastColoredTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fastColoredTextBox2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.fastColoredTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fastColoredTextBox2.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.fastColoredTextBox2.IsReplaceMode = false;
             this.fastColoredTextBox2.Language = FastColoredTextBoxNS.Language.HTML;
             this.fastColoredTextBox2.LeftBracket = '<';
             this.fastColoredTextBox2.LeftBracket2 = '(';
             this.fastColoredTextBox2.Location = new System.Drawing.Point(0, 0);
+            this.fastColoredTextBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.fastColoredTextBox2.Name = "fastColoredTextBox2";
             this.fastColoredTextBox2.Paddings = new System.Windows.Forms.Padding(0);
             this.fastColoredTextBox2.RightBracket = '>';
             this.fastColoredTextBox2.RightBracket2 = ')';
             this.fastColoredTextBox2.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fastColoredTextBox2.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox2.ServiceColors")));
-            this.fastColoredTextBox2.Size = new System.Drawing.Size(416, 252);
+            this.fastColoredTextBox2.Size = new System.Drawing.Size(441, 322);
             this.fastColoredTextBox2.TabIndex = 0;
             this.fastColoredTextBox2.WordWrap = true;
             this.fastColoredTextBox2.Zoom = 100;
@@ -788,6 +893,7 @@
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -798,16 +904,18 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(405, 252);
-            this.splitContainer5.SplitterDistance = 25;
+            this.splitContainer5.Size = new System.Drawing.Size(430, 322);
+            this.splitContainer5.SplitterDistance = 31;
+            this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 2;
             // 
             // WebsiteDownloadTextBox
             // 
             this.WebsiteDownloadTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WebsiteDownloadTextBox.Location = new System.Drawing.Point(0, 0);
+            this.WebsiteDownloadTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.WebsiteDownloadTextBox.Name = "WebsiteDownloadTextBox";
-            this.WebsiteDownloadTextBox.Size = new System.Drawing.Size(405, 25);
+            this.WebsiteDownloadTextBox.Size = new System.Drawing.Size(430, 31);
             this.WebsiteDownloadTextBox.TabIndex = 1;
             this.WebsiteDownloadTextBox.Text = "";
             // 
@@ -815,6 +923,7 @@
             // 
             this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer6.Name = "splitContainer6";
             this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -825,8 +934,9 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.htmlDownloadPreview);
-            this.splitContainer6.Size = new System.Drawing.Size(405, 223);
-            this.splitContainer6.SplitterDistance = 110;
+            this.splitContainer6.Size = new System.Drawing.Size(430, 286);
+            this.splitContainer6.SplitterDistance = 139;
+            this.splitContainer6.SplitterWidth = 5;
             this.splitContainer6.TabIndex = 3;
             // 
             // webView21
@@ -836,8 +946,9 @@
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webView21.Location = new System.Drawing.Point(0, 0);
+            this.webView21.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(405, 110);
+            this.webView21.Size = new System.Drawing.Size(430, 139);
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
             this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView21_NavigationCompleted);
@@ -846,19 +957,21 @@
             // 
             this.htmlDownloadPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.htmlDownloadPreview.Location = new System.Drawing.Point(0, 0);
-            this.htmlDownloadPreview.MinimumSize = new System.Drawing.Size(20, 20);
+            this.htmlDownloadPreview.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.htmlDownloadPreview.MinimumSize = new System.Drawing.Size(23, 22);
             this.htmlDownloadPreview.Name = "htmlDownloadPreview";
             this.htmlDownloadPreview.ScriptErrorsSuppressed = true;
-            this.htmlDownloadPreview.Size = new System.Drawing.Size(405, 109);
+            this.htmlDownloadPreview.Size = new System.Drawing.Size(430, 142);
             this.htmlDownloadPreview.TabIndex = 2;
             this.htmlDownloadPreview.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.htmlDownloadPreview_DocumentCompleted);
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(833, 289);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage4.Size = new System.Drawing.Size(886, 366);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Opções";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -869,10 +982,12 @@
             this.fileToolStripMenuItem,
             this.editarToolStripMenuItem1,
             this.publicarToolStripMenuItem,
+            this.janelaToolStripMenuItem,
             this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(841, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(894, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -970,12 +1085,28 @@
             this.publicarProjetoToolStripMenuItem.Name = "publicarProjetoToolStripMenuItem";
             this.publicarProjetoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.publicarProjetoToolStripMenuItem.Text = "Publicar projeto";
+            this.publicarProjetoToolStripMenuItem.Click += new System.EventHandler(this.publicarProjetoToolStripMenuItem_Click);
             // 
             // atualizarPublicaçãoToolStripMenuItem
             // 
             this.atualizarPublicaçãoToolStripMenuItem.Name = "atualizarPublicaçãoToolStripMenuItem";
             this.atualizarPublicaçãoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.atualizarPublicaçãoToolStripMenuItem.Text = "Atualizar Publicação";
+            // 
+            // janelaToolStripMenuItem
+            // 
+            this.janelaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logToolStripMenuItem});
+            this.janelaToolStripMenuItem.Name = "janelaToolStripMenuItem";
+            this.janelaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.janelaToolStripMenuItem.Text = "Janela";
+            // 
+            // logToolStripMenuItem
+            // 
+            this.logToolStripMenuItem.Name = "logToolStripMenuItem";
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.logToolStripMenuItem.Text = "Log";
+            this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -995,6 +1126,7 @@
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer7.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer7.Name = "splitContainer7";
             this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1005,28 +1137,30 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.StatusTab);
-            this.splitContainer7.Size = new System.Drawing.Size(841, 426);
-            this.splitContainer7.SplitterDistance = 315;
+            this.splitContainer7.Size = new System.Drawing.Size(894, 495);
+            this.splitContainer7.SplitterDistance = 392;
+            this.splitContainer7.SplitterWidth = 5;
             this.splitContainer7.TabIndex = 3;
             // 
             // StatusTab
             // 
             this.StatusTab.Controls.Add(this.tabPage5);
-            this.StatusTab.Controls.Add(this.tabPage6);
             this.StatusTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StatusTab.Location = new System.Drawing.Point(0, 0);
+            this.StatusTab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.StatusTab.Name = "StatusTab";
             this.StatusTab.SelectedIndex = 0;
-            this.StatusTab.Size = new System.Drawing.Size(841, 107);
+            this.StatusTab.Size = new System.Drawing.Size(894, 98);
             this.StatusTab.TabIndex = 0;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.DebugLog);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(833, 81);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage5.Size = new System.Drawing.Size(886, 70);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Log";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1034,42 +1168,38 @@
             // DebugLog
             // 
             this.DebugLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DebugLog.Location = new System.Drawing.Point(3, 3);
+            this.DebugLog.Location = new System.Drawing.Point(4, 3);
+            this.DebugLog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DebugLog.Name = "DebugLog";
             this.DebugLog.ReadOnly = true;
-            this.DebugLog.Size = new System.Drawing.Size(827, 75);
+            this.DebugLog.Size = new System.Drawing.Size(878, 64);
             this.DebugLog.TabIndex = 0;
             this.DebugLog.Text = "";
             // 
-            // tabPage6
+            // PagePreview
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(833, 81);
-            this.tabPage6.TabIndex = 1;
-            this.tabPage6.Text = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // ColorPickerBtn
-            // 
-            this.ColorPickerBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ColorPickerBtn.Image = global::WebComic_Editor.Properties.Resources.ColorWheel;
-            this.ColorPickerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ColorPickerBtn.Name = "ColorPickerBtn";
-            this.ColorPickerBtn.Size = new System.Drawing.Size(29, 29);
-            this.ColorPickerBtn.Text = "ColorPicker";
+            this.PagePreview.AllowExternalDrop = true;
+            this.PagePreview.CreationProperties = null;
+            this.PagePreview.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.PagePreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PagePreview.Location = new System.Drawing.Point(0, 0);
+            this.PagePreview.Name = "PagePreview";
+            this.PagePreview.Size = new System.Drawing.Size(579, 354);
+            this.PagePreview.TabIndex = 0;
+            this.PagePreview.ZoomFactor = 1D;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 450);
+            this.ClientSize = new System.Drawing.Size(894, 519);
             this.Controls.Add(this.splitContainer7);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "WebComic Editor";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -1091,6 +1221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.htmlPreview)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.MSPAtoolBar.ResumeLayout(false);
@@ -1129,6 +1260,7 @@
             this.splitContainer7.ResumeLayout(false);
             this.StatusTab.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PagePreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1151,7 +1283,6 @@
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private FastColoredTextBoxNS.FastColoredTextBox fastColoredTextBox1;
-        private System.Windows.Forms.WebBrowser htmlPreview;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.SplitContainer splitContainer3;
@@ -1165,7 +1296,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.RichTextBox WebsiteDownloadTextBox;
-        private System.Windows.Forms.WebBrowser PagePreview;
         private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carregarToolStripMenuItem;
         private System.Windows.Forms.Label label5;
@@ -1190,9 +1320,7 @@
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button htmlAddImageBtn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Button htmlPasteImageBtn;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button createNewPageBtn;
@@ -1203,18 +1331,28 @@
         private System.Windows.Forms.TabControl StatusTab;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.RichTextBox DebugLog;
-        private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.ToolStrip MSPAtoolBar;
         private System.Windows.Forms.ToolStripButton htmlImageBtn;
         private System.Windows.Forms.ToolStripButton pasteImageBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripDropDownButton ChatSystemDropDown;
-        private System.Windows.Forms.ToolStripMenuItem skerperlogToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton CreateChatSystemBtn;
         private System.Windows.Forms.ToolStripButton createChatTextBtn;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox ChatCharName;
         private System.Windows.Forms.ToolStripDropDownButton ColorPickerBtn;
+        private System.Windows.Forms.Panel colorPreviewPanel;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripComboBox ChatSystemDropDown;
+        private Microsoft.Web.WebView2.WinForms.WebView2 htmlPreview;
+        private System.Windows.Forms.ToolStripMenuItem janelaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripComboBox cssEffectSelector;
+        private System.Windows.Forms.ToolStripButton EffectBtn;
+        private System.Windows.Forms.ToolStripMenuItem bonitificarHTMLToolStripMenuItem;
+        private Microsoft.Web.WebView2.WinForms.WebView2 PagePreview;
     }
 }
 

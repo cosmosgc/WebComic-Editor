@@ -26,6 +26,9 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web.UI.WebControls;
+using Cyotek.Windows.Forms;
+using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace WebComic_Editor
 {
@@ -41,14 +44,19 @@ namespace WebComic_Editor
         public Form1()
         {
             InitializeComponent();
-            toolTip1.SetToolTip(htmlPasteImageBtn, "Cola uma imagem no html");
-            toolTip1.SetToolTip(htmlAddImageBtn, "Add tag imagem no html");
-            
+            string path = Path.Combine(Environment.CurrentDirectory, @"www\", "template.html");
+            PagePreview.Source = new Uri(path);
+            //htmlPreview.Navigate(path);
+            htmlPreview.Source = new Uri(path);
         }
 
-        private void FastColoredTextBox1_TextChangedDelayed(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
+        private async void FastColoredTextBox1_TextChangedDelayed(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
         {
-            htmlPreview.DocumentText = fastColoredTextBox1.Text;
+            //htmlPreview.Document.GetElementById("content").InnerHtml = fastColoredTextBox1.Text;
+            //Log("Atualizando Preview");
+            await htmlPreview.EnsureCoreWebView2Async();
+            string js = "document.getElementById(\"content\").innerHTML = `" + fastColoredTextBox1.Text + "`;";
+            await htmlPreview.CoreWebView2.ExecuteScriptAsync(js);
             if (WebComic.Count > 0)
             {
                 WebComic[pageSelected].content = fastColoredTextBox1.Text;
@@ -149,14 +157,18 @@ namespace WebComic_Editor
         {
             WebsiteDownloadTextBox.Text = url.ToString();
         }
-
-        private void WebComicGrid_RowEnter(object sender, DataGridViewCellEventArgs e)
+        
+        private async void WebComicGrid_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if(WebComic.Count > e.RowIndex)
             {
                 Log("Selecionou a Row: " + e.RowIndex);
                 mspa selectedPage = WebComic[e.RowIndex];
-                PagePreview.DocumentText = selectedPage.content;
+                await PagePreview.EnsureCoreWebView2Async();
+                string js = "document.getElementById(\"content\").innerHTML = `" + selectedPage.content + "`;";
+                await PagePreview.CoreWebView2.ExecuteScriptAsync(js);
+                await PagePreview.CoreWebView2.ExecuteScriptAsync("console.log('content atualizado');");
+                //htmlPreview.Document.GetElementById("content").InnerHtml = selectedPage.content;
                 fastColoredTextBox1.Text = selectedPage.content;
                 pageSelected = e.RowIndex;
             }
@@ -173,7 +185,6 @@ namespace WebComic_Editor
                 string FolderPath = Path.Combine(Environment.CurrentDirectory, @"Save\");
                 DirectoryInfo di = Directory.CreateDirectory(FolderPath);
             }
-
             File.WriteAllText(path, save);
         }
 
@@ -217,14 +228,17 @@ namespace WebComic_Editor
         {
             recentesToolStripMenuItem.DropDownItems.Clear();
             string path = Path.Combine(Environment.CurrentDirectory, @"Save\");
-            var files = Directory.GetFiles(path);
-            foreach (string file in files)
+            if (Directory.Exists(path))
             {
-                if (File.Exists(file))
+                var files = Directory.GetFiles(path);
+                foreach (string file in files)
                 {
-                    // This path is a file
-                    ToolStripMenuItem fileRecent = new ToolStripMenuItem(file, null, loadRecentFile);
-                    recentesToolStripMenuItem.DropDownItems.Add(fileRecent);
+                    if (File.Exists(file))
+                    {
+                        // This path is a file
+                        ToolStripMenuItem fileRecent = new ToolStripMenuItem(file, null, loadRecentFile);
+                        recentesToolStripMenuItem.DropDownItems.Add(fileRecent);
+                    }
                 }
             }
         }
@@ -315,27 +329,238 @@ namespace WebComic_Editor
             DebugLog.ScrollToCaret();
         }
 
-        private void htmlImage_Click(object sender, EventArgs e)
-        {
-
-            
-        }
-
         private void htmlImageBtn_Click(object sender, EventArgs e)
         {
             int cursorPos = fastColoredTextBox1.SelectionStart;
             fastColoredTextBox1.InsertText("<img src=\"\">");
         }
 
+
+        private void ColorPickerBtn_Click(object sender, EventArgs e)
+        {
+            ShowColorPicker();
+        }
+
+        
+        private void colorPreviewPanel_DoubleClick(object sender, EventArgs e)
+        {
+            ShowColorPicker();
+        }
+        public void ShowColorPicker()
+        {
+            using (ColorPickerDialog dialog = new ColorPickerDialog
+            {
+                Color = colorPreviewPanel.BackColor,
+            })
+            {
+                //dialog.CustomColorsLoading += this.DialogCustomColorsLoadingHandler;
+                //dialog.PreviewColorChanged += this.DialogColorChangedHandler;
+
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    colorPreviewPanel.BackColor = dialog.Color;
+                }
+
+                //dialog.PreviewColorChanged -= this.DialogColorChangedHandler;
+            }
+        }
+
+        private void publicarProjetoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sourcePath = Path.Combine(Environment.CurrentDirectory, @"www\");
+            string DestinyPath = Path.Combine(Environment.CurrentDirectory, @"Publish\");
+            Wcutils.CopyDirectory(sourcePath, DestinyPath, true);
+            string save = JsonConvert.SerializeObject(WebComic, Formatting.Indented);
+            string fileName = "webcomic.json";
+            string path = Path.Combine(DestinyPath, fileName);
+            File.WriteAllText(path, save);
+            Process.Start("explorer.exe", DestinyPath);
+        }
         private void CreateChatSystemBtn_Click(object sender, EventArgs e)
         {
             string text = "";
+            string chatSystem = ChatSystemDropDown.Text;
+            bool toRight = false;
+            string chatName = ChatCharName.Text;
+            string selectedText = fastColoredTextBox1.SelectedText;
+            Color selectedColor = colorPreviewPanel.BackColor;
+
             Log(ChatSystemDropDown.Text);
-            if(ChatSystemDropDown.Text == "SkerperLog")
+            if (chatSystem == "SkerperLog")
             {
                 text = Wcutils.SkorperLogDiv();
             }
+            if (chatSystem == "AmongUs")
+            {
+                text = Wcutils.AmongUsDiv();
+            }
+            if (chatSystem == "Earthbound")
+            {
+                text = Wcutils.Earthbound();
+            }
+            if (chatSystem == "gimpact")
+            {
+                text = wcCss.gimpact(chatName);
+            }
+            if (chatSystem == "dcord2")
+            {
+                text = wcCss.dcord2();
+            }
+            if (chatSystem == "aol")
+            {
+                text = wcCss.aol();
+            }
+            if (chatSystem == "TF2")
+            {
+                text = wcCss.TF2();
+            }
+            if (chatSystem == "PCTERMINAL")
+            {
+                text = wcCss.PCTERMINAL();
+            }
+            if (chatSystem == "YBComment")
+            {
+                text = wcCss.ytcom(chatName);
+            }
+            if (chatSystem == "falloutvgnorm")
+            {
+                text = wcCss.falloutvgnorm(selectedText);
+            }
+            if (chatSystem == "hylics2")
+            {
+                text = wcCss.hylics2(selectedText);
+            }
+            if (chatSystem == "jazztronauts")
+            {
+                text = wcCss.jazztronauts(chatName, selectedText, toRight);
+            }
+            if (chatSystem == "phone")
+            {
+                text = wcCss.phone(chatName, selectedColor);
+            }
+            if (chatSystem == "minecraft")
+            {
+                text = wcCss.mcchat(selectedText);
+            }
+            if (chatSystem == "Detroit")
+            {
+                text = wcCss.dthuman(selectedText);
+            }
+            if (chatSystem == "Undertale Menu")
+            {
+                text = wcCss.UTmenu3();
+            }
+            if (chatSystem == "robloxScore")
+            {
+                text = wcCss.roblox(selectedColor);
+            }
             fastColoredTextBox1.InsertText(text);
+        }
+        private void createChatTextBtn_Click(object sender, EventArgs e)
+        {
+            string text = "";
+            string chatSystem = ChatSystemDropDown.Text;
+            bool toRight = false;
+            string chatName = ChatCharName.Text;
+            string selectedText = fastColoredTextBox1.SelectedText;
+            Color selectedColor = colorPreviewPanel.BackColor;
+            if (chatSystem == "SkerperLog")
+            {
+                text = Wcutils.SkorperLogChat(chatName, selectedColor);
+            }
+            if (chatSystem == "AmongUs")
+            {
+                text = Wcutils.AmongUsChat(chatName);
+            }
+            if (chatSystem == "Earthbound")
+            {
+                text = Wcutils.Earthbound();
+            }
+            if (chatSystem == "dcord2")
+            {
+                text = wcCss.dcord2Chat(chatName, selectedColor);
+            }
+            if (chatSystem == "phone")
+            {
+                text = wcCss.phoneChat(selectedText, toRight);
+            }
+            if (chatSystem == "Undertale Menu")
+            {
+                text = wcCss.UTmenu3Item();
+            }
+
+            fastColoredTextBox1.InsertText(text);
+        }
+
+        private void EffectBtn_Click(object sender, EventArgs e)
+        {
+            string text = "";
+            string selectedText = fastColoredTextBox1.SelectedText;
+            string chatSystem = cssEffectSelector.Text;
+            string chatName = ChatCharName.Text;
+            Color selectedColor = colorPreviewPanel.BackColor;
+            if (chatSystem == "glitch")
+            {
+                text = wcCss.glitch(selectedText);
+            }
+            if (chatSystem == "COMBOBOX")
+            {
+                text = wcCss.COMBOBOX(selectedText, selectedColor);
+            }
+            if (chatSystem == "shake")
+            {
+                text = wcCss.shake(selectedText);
+            }
+            if (chatSystem == "RAINBOW")
+            {
+                text = wcCss.RAINBOW(selectedText);
+            }
+            if (chatSystem == "Diary")
+            {
+                text = wcCss.Diary(selectedText);
+            }
+            if (chatSystem == "Minecraft Button")
+            {
+                text = wcCss.mcBtn(selectedText);
+            }
+            if (chatSystem == "Minecraft Placa")
+            {
+                text = wcCss.mcsign(selectedText);
+            }
+            if (chatSystem == "Animar texto sequencial")
+            {
+                text = wcCss.TextAppearingSequentially(selectedText);
+            }
+
+            fastColoredTextBox1.InsertText(text);
+        }
+
+        private void bonitificarHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string text = fastColoredTextBox1.Text;
+            //XElement.Parse(text).ToString();
+            fastColoredTextBox1.Text = text;
+        }
+
+        private void fastColoredTextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                fastColoredTextBox1.InsertText("<br>");
+            }
+        }
+
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            splitContainer7.Panel2Collapsed = !splitContainer7.Panel2Collapsed;
+            if (splitContainer7.Panel2Collapsed)
+            {
+                splitContainer7.Panel2.Hide();
+            }
+            else
+            {
+                splitContainer7.Panel2.Show();
+            }
         }
     }
 }
