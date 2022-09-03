@@ -22,13 +22,12 @@ using File = System.IO.File;
 using System.Net.Http;
 using System.Web;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web.UI.WebControls;
 using Cyotek.Windows.Forms;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using MaterialSkin.Controls;
 
 namespace WebComic_Editor
 {
@@ -57,6 +56,9 @@ namespace WebComic_Editor
             await htmlPreview.EnsureCoreWebView2Async();
             string js = "document.getElementById(\"content\").innerHTML = `" + fastColoredTextBox1.Text + "`;";
             await htmlPreview.CoreWebView2.ExecuteScriptAsync(js);
+
+            //Skorperlog funciona após ser iniciado por essa função
+            await htmlPreview.CoreWebView2.ExecuteScriptAsync("initSpoiler()");
             if (WebComic.Count > 0)
             {
                 WebComic[pageSelected].content = fastColoredTextBox1.Text;
@@ -282,6 +284,13 @@ namespace WebComic_Editor
             fastColoredTextBox1.Paste();
         }
 
+        private void pasteImageBtn_Click(object sender, EventArgs e)
+        {
+            int cursorPos = fastColoredTextBox1.SelectionStart;
+            fastColoredTextBox1.InsertText("<img src=\"" + Clipboard.GetText() + "\">");
+            
+        }
+
         private void htmlPasteImageBtn_Click(object sender, EventArgs e)
         {
             string text = "";
@@ -454,6 +463,26 @@ namespace WebComic_Editor
             {
                 text = wcCss.roblox(selectedColor);
             }
+            if (chatSystem == "deltarune")
+            {
+                text = wcTextBoxes.deltarune(selectedText);
+            }
+            if (chatSystem == "Ace Atorney")
+            {
+                text = wcTextBoxes.acewrap(chatName, selectedText);
+            }
+            if (chatSystem == "HollowKnight")
+            {
+                text = wcTextBoxes.HollowKnight(selectedText);
+            }
+            if (chatSystem == "botw")
+            {
+                text = wcTextBoxes.botw(chatName, selectedText);
+            }
+            if (chatSystem == "picto")
+            {
+                text = wcTextBoxes.picto(selectedColor, chatName, selectedText);
+            }
             fastColoredTextBox1.InsertText(text);
         }
         private void createChatTextBtn_Click(object sender, EventArgs e)
@@ -487,6 +516,10 @@ namespace WebComic_Editor
             if (chatSystem == "Undertale Menu")
             {
                 text = wcCss.UTmenu3Item();
+            }
+            if (chatSystem == "picto")
+            {
+                text = wcTextBoxes.pictoChat(selectedColor, chatName, selectedText);
             }
 
             fastColoredTextBox1.InsertText(text);
@@ -531,6 +564,10 @@ namespace WebComic_Editor
             {
                 text = wcCss.TextAppearingSequentially(selectedText);
             }
+            if (chatSystem == "Doc Scratch")
+            {
+                text = wcCss.DocScratch(selectedColor, selectedText);
+            }
 
             fastColoredTextBox1.InsertText(text);
         }
@@ -544,9 +581,21 @@ namespace WebComic_Editor
 
         private void fastColoredTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Return)
+            if (!e.Alt && e.KeyCode == Keys.Return)
             {
                 fastColoredTextBox1.InsertText("<br>");
+            }
+            if (e.Control && e.KeyCode == Keys.E)
+            {
+                EffectBtn_Click(sender, e);
+            }
+            if (e.Control && e.KeyCode == Keys.Q)
+            {
+                CreateChatSystemBtn_Click(sender, e);
+            }
+            if (e.Control && e.KeyCode == Keys.W)
+            {
+                createChatTextBtn_Click(sender, e);
             }
         }
 
@@ -562,5 +611,6 @@ namespace WebComic_Editor
                 splitContainer7.Panel2.Show();
             }
         }
+
     }
 }

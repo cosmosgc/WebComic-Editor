@@ -11,9 +11,12 @@ namespace WebComic_Editor.Class
 {
     internal class wcCss
     {
-        public static string AmongUsChat(string charName)
+        public static string AmongUsChat(string charName, string selectedText = "TEXT HERE",bool toRight = false)
         {
-            string text = "<div class=\"us\" <!--class=\"you\"style=\"--icon: url(ICON HERE)--> \"><name>" + charName + "</name><br>TEXT HERE</div>";
+            string DirectionClass = "class=\"us\"";
+            if (toRight)
+                DirectionClass = "class=\"you\"";
+            string text = "<div "+DirectionClass+" style=\"--icon: url(ICON HERE) \"><name>" + charName + "</name><br>\r\n"+selectedText+"\r\n\r\n</div>";
             //XElement.Parse(text).ToString();
             return text;
         }
@@ -66,6 +69,7 @@ namespace WebComic_Editor.Class
         {
             string text = "";
             text = "<div class=\"dcord2\"><br>" +
+                "\r\n\r\n<!--TEXT HERE-->\r\n\r\n" +
                 "<input placeholder=\"Message @chat\"><br></div>";
             //XElement.Parse(text).ToString();
             return text;
@@ -74,7 +78,7 @@ namespace WebComic_Editor.Class
         {
             string hex = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
             string text = "";
-            text += "<div>\r\n<user style=\"--icon: url(https://file.garden/X1htvgJ0DEp_tp-Z/9b.png); color: " + hex +";\">"+charName+ "</user><br>\r\n Text Here <at>@mençãoaqui</at>!\r\n</div><br>";
+            text += "\r\n<div>\r\n<user style=\"--icon: url(https://file.garden/X1htvgJ0DEp_tp-Z/9b.png); color: " + hex +";\">"+charName+ "</user><br>\r\n\r\n Text Here <at>@mençãoaqui</at>!\r\n\r\n</div><br>\r\n\r\n";
             //XElement.Parse(text).ToString();
             return text;
         }
@@ -89,13 +93,13 @@ namespace WebComic_Editor.Class
         }
         public static string TF2()
         {
-            string text = "<div class=\"tf2chat\">\r\n<div> Text here </div>\r\n</div>";
+            string text = "<div class=\"tf2chat\">\r\n<div> Text here </div>\r\n\r\n<!--TEXT HERE-->\r\n\r\n</div>";
             //XElement.Parse(text).ToString();
             return text;
         }
-        public static string Diary(string selectedText)
+        public static string Diary(string selectedText = "TEXT HERE")
         {
-            string text = "<div class=\"wimp\">"+ selectedText + "</div>";
+            string text = "<div class=\"wimp\">\r\n\r\n" + selectedText + "\r\n\r\n</div>";
             //XElement.Parse(text).ToString();
             return text;
         }
@@ -107,26 +111,26 @@ namespace WebComic_Editor.Class
         }
         public static string PCTERMINAL()
         {
-            string text = "<div class=\"realTerminal\">Text Here</div>";
+            string text = "<div class=\"realTerminal\">\r\n\r\nText Here\r\n\r\n</div>";
             //XElement.Parse(text).ToString();
             return text;
         }
         public static string ytcom(string charName)
         {
-            string text = "<div class=\"ytcom\" style=\"--icon: url(IMAGEHERE)\">" +
-                "<h1>" + charName + "</h1> 14/04/2944<br>\r\nTEXTHERE <p> LIKES\r\n</div>";
+            string text = "\r\n<div class=\"ytcom\" style=\"--icon: url(IMAGEHERE)\">\r\n" +
+                "<h1>" + charName + "</h1> 14/04/2944<br>\r\n\r\nTEXTHERE\r\n <p> LIKES\r\n</div>\r\n\r\n";
             //XElement.Parse(text).ToString();
             return text;
         }
         public static string falloutvgnorm(string selectedText = "TEXT HERE")
         {
-            string text = "<div class=\"falloutvgnorm\"> "+selectedText+"</div>";
+            string text = "<div class=\"falloutvgnorm\"> \r\n\r\n" + selectedText+ "\r\n\r\n</div>";
             //XElement.Parse(text).ToString();
             return text;
         }
         public static string hylics2(string selectedText = "TEXT HERE")
         {
-            string text = "<div class=\"hylics2\">\r\n " + selectedText + " \r\n</div>";
+            string text = "<div class=\"hylics2\">\r\n<!--TEXT HERE-->\r\n " + selectedText + " \r\n\r\n</div>";
             //XElement.Parse(text).ToString();
             return text;
         }
@@ -135,7 +139,7 @@ namespace WebComic_Editor.Class
             string Direction = "";
             if (ToRight)
                 Direction = "R";
-            string text = "<div class=\"jazztronauts"+ Direction + "\"> "+charName+" <div> "+ selectedText +" </div></div>";
+            string text = "<div class=\"jazztronauts"+ Direction + "\"> "+charName+ " <div> \r\n<!--TEXT HERE-->\r\n" + selectedText + " \r\n\r\n</div></div>";
             //XElement.Parse(text).ToString();
             return text;
         }
@@ -143,8 +147,8 @@ namespace WebComic_Editor.Class
         {
             string hex = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
 
-            string text = "<div class=\"phone\" style=\"--color1: "+hex+";\">\r\n<div class=\"phhead\"> [IMAGE] "+ charName +" </div>" +
-                "</div>";
+            string text = "\r\n<div class=\"phone\" style=\"--color1: " + hex+";\">\r\n<div class=\"phhead\"> [IMAGE] "+ charName + " </div>\r\n\r\n" +
+                "<!--TEXT HERE USE O BOTÃO DE CRIAR MSG NO LADO DO SELECIONAR NOME--> \r\n\r\n</div>\r\n";
             //XElement.Parse(text).ToString();
             return text;
         }
@@ -154,27 +158,27 @@ namespace WebComic_Editor.Class
             if (selectedText == null)
                 selectedText = "TEXT HERE";
             if (ToRight)
-                DivSyntax = "<div class=\"phself\">";
+                DivSyntax = "\r\n<div class=\"phself\">";
                 
-            string text = DivSyntax+"<p> "+selectedText+"</div>";
+            string text = DivSyntax+ "\r\n<p>\r\n<!--TEXT HERE--> " + selectedText+ "\r\n\r\n</div>\r\n";
             //XElement.Parse(text).ToString();
             return text;
         }
         public static string mcchat(string selectedText = "TEXT HERE")
         {
-            string text = "<div class=\"mcchat\"><div>" + selectedText + "</div></div>";
+            string text = "<div class=\"mcchat\"><div>\r\n<!--TEXT HERE-->\r\n" + selectedText + "\r\n\r\n</div></div>\r\n";
             //XElement.Parse(text).ToString();
             return text;
         }
         public static string mcsign(string selectedText = "TEXT HERE")
         {
-            string text = "<div class=\"mcsign\"><div>" + selectedText + "</div></div>";
+            string text = "<div class=\"mcsign\"><div>\r\n<!--TEXT HERE-->" + selectedText + "</div></div>\r\n";
             //XElement.Parse(text).ToString();
             return text;
         }
         public static string TextAppearingSequentially(string selectedText = "TEXT HERE")
         {
-            string text = "<div class=\"scroll\" style=\"--delay: 0\"><div>}"+ selectedText + "</div></div>";
+            string text = "<div class=\"scroll\" style=\"--delay: 0; text-align:left;\"><div><!--TEXT HERE-->" + selectedText + "</div></div>";
             //XElement.Parse(text).ToString();
             return text;
         }
@@ -202,6 +206,14 @@ namespace WebComic_Editor.Class
             string hex = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
 
             string text = "<div class=\"roblox\"><table>\r\n\r\n<tr>\r\n<th>People</th>\r\n<th>KOs</th>\r\n<th>Wipeouts</th>\r\n</tr>\r\n\r\n<tr id=\"head\" style=\"--color1: "+hex+"\">\r\n<td>Jogador1</td>\r\n<td>1</td>\r\n<td>0</td>\r\n</tr>\r\n\r\n<tr>\r\n<td>Jogador2</td>\r\n<td>1</td>\r\n<td>0</td>\r\n</tr>\r\n\r\n</table></div>";
+            //XElement.Parse(text).ToString();
+            return text;
+        }
+        public static string DocScratch(Color color, string selectedText = "TEXT HERE")
+        {
+            string hex = "#" + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2");
+
+            string text = "<div class=\"docyell\" style=\"--color: "+hex+"\">"+ selectedText + "</div>";
             //XElement.Parse(text).ToString();
             return text;
         }

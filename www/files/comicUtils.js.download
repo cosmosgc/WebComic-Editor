@@ -45,6 +45,8 @@ const keyboardCommands = () => {
 
 const initSpoiler = () => {
 	const spoilers = document.getElementsByClassName('spoiler')
+
+	console.log("Abrindo spoiler");
 	for (let spoiler of spoilers) {
 		const input = spoiler.querySelector('input')
 		input.addEventListener("click", (e) => {

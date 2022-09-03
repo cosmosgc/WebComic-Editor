@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.createNewPageBtn = new System.Windows.Forms.Button();
+            this.PagePreview = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -118,7 +119,6 @@
             this.StatusTab = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.DebugLog = new System.Windows.Forms.RichTextBox();
-            this.PagePreview = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -129,6 +129,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PagePreview)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -169,7 +170,6 @@
             this.splitContainer7.SuspendLayout();
             this.StatusTab.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PagePreview)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -183,7 +183,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(894, 392);
+            this.tabControl1.Size = new System.Drawing.Size(834, 389);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -195,7 +195,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage1.Size = new System.Drawing.Size(886, 364);
+            this.tabPage1.Size = new System.Drawing.Size(826, 361);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "WebComic";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -216,8 +216,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.PagePreview);
-            this.splitContainer1.Size = new System.Drawing.Size(876, 356);
-            this.splitContainer1.SplitterDistance = 290;
+            this.splitContainer1.Size = new System.Drawing.Size(816, 353);
+            this.splitContainer1.SplitterDistance = 269;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -225,10 +225,11 @@
             // 
             this.WebComicGrid.AllowUserToAddRows = false;
             this.WebComicGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.WebComicGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.WebComicGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.WebComicGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.WebComicGrid.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.WebComicGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WebComicGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.page,
@@ -240,15 +241,15 @@
             this.WebComicGrid.Name = "WebComicGrid";
             this.WebComicGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.WebComicGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.WebComicGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WebComicGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.WebComicGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.DimGray;
             this.WebComicGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.WebComicGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.WebComicGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.WebComicGrid.Size = new System.Drawing.Size(288, 294);
+            this.WebComicGrid.Size = new System.Drawing.Size(267, 291);
             this.WebComicGrid.TabIndex = 0;
             this.WebComicGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.WebComicGrid_CellEndEdit);
             this.WebComicGrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.WebComicGrid_RowEnter);
@@ -265,8 +266,8 @@
             // 
             this.command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.command.DataPropertyName = "command";
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.command.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.command.DefaultCellStyle = dataGridViewCellStyle2;
             this.command.HeaderText = "Comando";
             this.command.Name = "command";
             // 
@@ -290,7 +291,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(288, 60);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(267, 60);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label2
@@ -341,24 +342,36 @@
             this.createNewPageBtn.UseVisualStyleBackColor = true;
             this.createNewPageBtn.Click += new System.EventHandler(this.createNewPageBtn_Click);
             // 
+            // PagePreview
+            // 
+            this.PagePreview.AllowExternalDrop = true;
+            this.PagePreview.CreationProperties = null;
+            this.PagePreview.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.PagePreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PagePreview.Location = new System.Drawing.Point(0, 0);
+            this.PagePreview.Name = "PagePreview";
+            this.PagePreview.Size = new System.Drawing.Size(540, 351);
+            this.PagePreview.TabIndex = 0;
+            this.PagePreview.ZoomFactor = 1D;
+            // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(4, 3);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(876, 356);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(816, 353);
             this.flowLayoutPanel4.TabIndex = 4;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
             this.tabPage2.Controls.Add(this.menuStrip2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(886, 366);
+            this.tabPage2.Size = new System.Drawing.Size(826, 361);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editar Pagina";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -376,7 +389,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(878, 336);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(818, 331);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // splitContainer2
@@ -394,7 +407,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.htmlPreview);
-            this.splitContainer2.Size = new System.Drawing.Size(958, 294);
+            this.splitContainer2.Size = new System.Drawing.Size(958, 289);
             this.splitContainer2.SplitterDistance = 448;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
@@ -437,7 +450,7 @@
             this.fastColoredTextBox1.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox1.ServiceColors")));
             this.fastColoredTextBox1.ShowCaretWhenInactive = true;
             this.fastColoredTextBox1.ShowFoldingLines = true;
-            this.fastColoredTextBox1.Size = new System.Drawing.Size(446, 292);
+            this.fastColoredTextBox1.Size = new System.Drawing.Size(446, 287);
             this.fastColoredTextBox1.TabIndex = 0;
             this.fastColoredTextBox1.Text = resources.GetString("fastColoredTextBox1.Text");
             this.fastColoredTextBox1.WordWrap = true;
@@ -454,7 +467,7 @@
             this.htmlPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.htmlPreview.Location = new System.Drawing.Point(0, 0);
             this.htmlPreview.Name = "htmlPreview";
-            this.htmlPreview.Size = new System.Drawing.Size(503, 292);
+            this.htmlPreview.Size = new System.Drawing.Size(503, 287);
             this.htmlPreview.TabIndex = 0;
             this.htmlPreview.ZoomFactor = 1D;
             // 
@@ -509,6 +522,7 @@
             this.MSPAtoolBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.MSPAtoolBar.Location = new System.Drawing.Point(38, 0);
             this.MSPAtoolBar.Name = "MSPAtoolBar";
+            this.MSPAtoolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.MSPAtoolBar.Size = new System.Drawing.Size(737, 36);
             this.MSPAtoolBar.Stretch = true;
             this.MSPAtoolBar.TabIndex = 2;
@@ -540,6 +554,7 @@
             this.pasteImageBtn.Size = new System.Drawing.Size(23, 33);
             this.pasteImageBtn.Text = "toolStripButton1";
             this.pasteImageBtn.ToolTipText = "Cola uma imagem no html";
+            this.pasteImageBtn.Click += new System.EventHandler(this.pasteImageBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -570,6 +585,11 @@
             "phone",
             "minecraft",
             "Detroit",
+            "picto",
+            "botw",
+            "HollowKnight",
+            "Ace Atorney",
+            "deltarune",
             "Undertale Menu",
             "robloxScore"});
             this.ChatSystemDropDown.Name = "ChatSystemDropDown";
@@ -637,8 +657,10 @@
             "COMBOBOX",
             "shake",
             "RAINBOW",
+            "Doc Scratch",
             "Diary",
             "Minecraft Button",
+            "Minecraft Placa",
             "Animar texto sequencial"});
             this.cssEffectSelector.Name = "cssEffectSelector";
             this.cssEffectSelector.Size = new System.Drawing.Size(121, 36);
@@ -662,7 +684,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(4, 3);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(878, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(818, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -703,7 +725,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage3.Size = new System.Drawing.Size(886, 366);
+            this.tabPage3.Size = new System.Drawing.Size(826, 363);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Download";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -725,8 +747,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer4.Size = new System.Drawing.Size(878, 360);
-            this.splitContainer4.SplitterDistance = 31;
+            this.splitContainer4.Size = new System.Drawing.Size(818, 357);
+            this.splitContainer4.SplitterDistance = 28;
             this.splitContainer4.SplitterWidth = 5;
             this.splitContainer4.TabIndex = 1;
             // 
@@ -745,7 +767,7 @@
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(876, 29);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(816, 26);
             this.flowLayoutPanel3.TabIndex = 8;
             // 
             // sourceSelect
@@ -841,8 +863,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer3.Size = new System.Drawing.Size(876, 322);
-            this.splitContainer3.SplitterDistance = 441;
+            this.splitContainer3.Size = new System.Drawing.Size(816, 322);
+            this.splitContainer3.SplitterDistance = 409;
             this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -884,7 +906,7 @@
             this.fastColoredTextBox2.RightBracket2 = ')';
             this.fastColoredTextBox2.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.fastColoredTextBox2.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox2.ServiceColors")));
-            this.fastColoredTextBox2.Size = new System.Drawing.Size(441, 322);
+            this.fastColoredTextBox2.Size = new System.Drawing.Size(409, 322);
             this.fastColoredTextBox2.TabIndex = 0;
             this.fastColoredTextBox2.WordWrap = true;
             this.fastColoredTextBox2.Zoom = 100;
@@ -904,8 +926,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(430, 322);
-            this.splitContainer5.SplitterDistance = 31;
+            this.splitContainer5.Size = new System.Drawing.Size(402, 322);
+            this.splitContainer5.SplitterDistance = 28;
             this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 2;
             // 
@@ -915,7 +937,7 @@
             this.WebsiteDownloadTextBox.Location = new System.Drawing.Point(0, 0);
             this.WebsiteDownloadTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.WebsiteDownloadTextBox.Name = "WebsiteDownloadTextBox";
-            this.WebsiteDownloadTextBox.Size = new System.Drawing.Size(430, 31);
+            this.WebsiteDownloadTextBox.Size = new System.Drawing.Size(402, 28);
             this.WebsiteDownloadTextBox.TabIndex = 1;
             this.WebsiteDownloadTextBox.Text = "";
             // 
@@ -934,8 +956,8 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.htmlDownloadPreview);
-            this.splitContainer6.Size = new System.Drawing.Size(430, 286);
-            this.splitContainer6.SplitterDistance = 139;
+            this.splitContainer6.Size = new System.Drawing.Size(402, 289);
+            this.splitContainer6.SplitterDistance = 137;
             this.splitContainer6.SplitterWidth = 5;
             this.splitContainer6.TabIndex = 3;
             // 
@@ -948,7 +970,7 @@
             this.webView21.Location = new System.Drawing.Point(0, 0);
             this.webView21.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(430, 139);
+            this.webView21.Size = new System.Drawing.Size(402, 137);
             this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
             this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView21_NavigationCompleted);
@@ -961,7 +983,7 @@
             this.htmlDownloadPreview.MinimumSize = new System.Drawing.Size(23, 22);
             this.htmlDownloadPreview.Name = "htmlDownloadPreview";
             this.htmlDownloadPreview.ScriptErrorsSuppressed = true;
-            this.htmlDownloadPreview.Size = new System.Drawing.Size(430, 142);
+            this.htmlDownloadPreview.Size = new System.Drawing.Size(402, 147);
             this.htmlDownloadPreview.TabIndex = 2;
             this.htmlDownloadPreview.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.htmlDownloadPreview_DocumentCompleted);
             // 
@@ -971,7 +993,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage4.Size = new System.Drawing.Size(886, 366);
+            this.tabPage4.Size = new System.Drawing.Size(826, 363);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Opções";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -987,7 +1009,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(894, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(834, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1137,8 +1159,8 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.StatusTab);
-            this.splitContainer7.Size = new System.Drawing.Size(894, 495);
-            this.splitContainer7.SplitterDistance = 392;
+            this.splitContainer7.Size = new System.Drawing.Size(834, 495);
+            this.splitContainer7.SplitterDistance = 389;
             this.splitContainer7.SplitterWidth = 5;
             this.splitContainer7.TabIndex = 3;
             // 
@@ -1150,7 +1172,7 @@
             this.StatusTab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.StatusTab.Name = "StatusTab";
             this.StatusTab.SelectedIndex = 0;
-            this.StatusTab.Size = new System.Drawing.Size(894, 98);
+            this.StatusTab.Size = new System.Drawing.Size(834, 101);
             this.StatusTab.TabIndex = 0;
             // 
             // tabPage5
@@ -1160,7 +1182,7 @@
             this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage5.Size = new System.Drawing.Size(886, 70);
+            this.tabPage5.Size = new System.Drawing.Size(826, 73);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Log";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1172,34 +1194,24 @@
             this.DebugLog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DebugLog.Name = "DebugLog";
             this.DebugLog.ReadOnly = true;
-            this.DebugLog.Size = new System.Drawing.Size(878, 64);
+            this.DebugLog.Size = new System.Drawing.Size(818, 67);
             this.DebugLog.TabIndex = 0;
             this.DebugLog.Text = "";
-            // 
-            // PagePreview
-            // 
-            this.PagePreview.AllowExternalDrop = true;
-            this.PagePreview.CreationProperties = null;
-            this.PagePreview.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.PagePreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PagePreview.Location = new System.Drawing.Point(0, 0);
-            this.PagePreview.Name = "PagePreview";
-            this.PagePreview.Size = new System.Drawing.Size(579, 354);
-            this.PagePreview.TabIndex = 0;
-            this.PagePreview.ZoomFactor = 1D;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 519);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(834, 519);
             this.Controls.Add(this.splitContainer7);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
-            this.Text = "WebComic Editor";
+            this.Text = "WEBCOMIC EDITOR";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -1212,6 +1224,7 @@
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PagePreview)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1260,7 +1273,6 @@
             this.splitContainer7.ResumeLayout(false);
             this.StatusTab.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PagePreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

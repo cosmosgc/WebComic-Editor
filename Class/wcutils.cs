@@ -52,27 +52,27 @@ namespace WebComic_Editor.Class
                 "#"+ color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2") +
                 ";\">\r\n" +
                 charName + 
-                ": " + "<!--TEXTO AQUI-->\r\n" +
+                ": " + "<!--TEXTO AQUI-->\r\n\r\n" +
                 "</span>" +
-                "<br>";
+                "<br>\r\n";
             return text;
         }
         public static string AmongUsDiv()
         {
             string text = "<div class=\"among\">\r\n" +
-                "<!--Chat Aqui-->" +
-                "</div>";
+                "<!--Chat Aqui-->\r\n\r\n" +
+                "</div>\r\n";
             return text;
         }
         public static string AmongUsChat(string charName)
         {
-            string text = "<div class=\"us\" <!--class=\"you\"style=\"--icon: url(ICON HERE)--> \">\r\n" +
-                "<name>"+charName+"</name>\r\nTEXT HERE</div>";
+            string text = "\r\n<div class=\"us\" <!--class=\"you\"style=\"--icon: url(ICON HERE)--> \">\r\n" +
+                "<name>"+charName+ "</name><br>\r\nTEXT HERE\r\n</div>\r\n";
             return text;
         }
         public static string Earthbound()
         {
-            string text = "<div class=\"earthbstrw\">\r\n" +
+            string text = "\r\n<div class=\"earthbstrw\">\r\n" +
                 "<div><div class=\"scroll\" style=\"--delay: 0\">\r\n" +
                 "<div>} Now in diffrent flavours!</div>\r\n" +
                 "</div>\r\n" +
@@ -83,7 +83,7 @@ namespace WebComic_Editor.Class
                 "<div>} Looks good enough here</div>\r\n" +
                 "</div>\r\n" +
                 "</div>\r\n" +
-                "</div>";
+                "</div>\r\n";
             XElement.Parse(text).ToString();
             return text;
         }
