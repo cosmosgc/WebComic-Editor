@@ -39,7 +39,7 @@ namespace WebComic_Editor
         private int currentPage = 0;
         public Uri url;
         private int pageSelected = 0;
-
+        public bool chatOptionActive = false;
         public Form1()
         {
             InitializeComponent();
@@ -389,7 +389,7 @@ namespace WebComic_Editor
         {
             string text = "";
             string chatSystem = ChatSystemDropDown.Text;
-            bool toRight = false;
+            bool toRight = chatOptionActive;
             string chatName = ChatCharName.Text;
             string selectedText = fastColoredTextBox1.SelectedText;
             Color selectedColor = colorPreviewPanel.BackColor;
@@ -489,7 +489,7 @@ namespace WebComic_Editor
         {
             string text = "";
             string chatSystem = ChatSystemDropDown.Text;
-            bool toRight = false;
+            bool toRight = chatOptionActive;
             string chatName = ChatCharName.Text;
             string selectedText = fastColoredTextBox1.SelectedText;
             Color selectedColor = colorPreviewPanel.BackColor;
@@ -499,7 +499,7 @@ namespace WebComic_Editor
             }
             if (chatSystem == "AmongUs")
             {
-                text = Wcutils.AmongUsChat(chatName);
+                text = Wcutils.AmongUsChat(chatName, toRight);
             }
             if (chatSystem == "Earthbound")
             {
@@ -612,5 +612,15 @@ namespace WebComic_Editor
             }
         }
 
+        private void ChatOptions_Click(object sender, EventArgs e)
+        {
+            ChatOptions.Checked = !ChatOptions.Checked;
+            chatOptionActive = ChatOptions.Checked;
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Wcutils.ShowAbout();
+        }
     }
 }

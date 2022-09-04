@@ -160,7 +160,7 @@ namespace WebComic_Editor.Class
             if (ToRight)
                 DivSyntax = "\r\n<div class=\"phself\">";
                 
-            string text = DivSyntax+ "\r\n<p>\r\n<!--TEXT HERE--> " + selectedText+ "\r\n\r\n</div>\r\n";
+            string text = DivSyntax+ "\r\n<p>\r\n<!--TEXT HERE, use <br> para aumentar o balão, use <p> para criar um novo balão adequadamente-->\r\n " + selectedText+ "\r\n\r\n</div>\r\n";
             //XElement.Parse(text).ToString();
             return text;
         }

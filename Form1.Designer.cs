@@ -67,6 +67,8 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.ChatCharName = new System.Windows.Forms.ToolStripTextBox();
             this.createChatTextBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ChatOptions = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.cssEffectSelector = new System.Windows.Forms.ToolStripComboBox();
@@ -367,11 +369,11 @@
             // 
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
             this.tabPage2.Controls.Add(this.menuStrip2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabPage2.Size = new System.Drawing.Size(826, 361);
+            this.tabPage2.Size = new System.Drawing.Size(826, 363);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editar Pagina";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -389,7 +391,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(818, 331);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(818, 333);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // splitContainer2
@@ -407,7 +409,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.htmlPreview);
-            this.splitContainer2.Size = new System.Drawing.Size(958, 289);
+            this.splitContainer2.Size = new System.Drawing.Size(958, 291);
             this.splitContainer2.SplitterDistance = 448;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
@@ -426,7 +428,7 @@
         '\'',
         '\''};
             this.fastColoredTextBox1.AutoIndentCharsPatterns = "";
-            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(0, 126);
+            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(0, 14);
             this.fastColoredTextBox1.BackBrush = null;
             this.fastColoredTextBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.fastColoredTextBox1.CharHeight = 14;
@@ -450,9 +452,9 @@
             this.fastColoredTextBox1.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("fastColoredTextBox1.ServiceColors")));
             this.fastColoredTextBox1.ShowCaretWhenInactive = true;
             this.fastColoredTextBox1.ShowFoldingLines = true;
-            this.fastColoredTextBox1.Size = new System.Drawing.Size(446, 287);
+            this.fastColoredTextBox1.Size = new System.Drawing.Size(446, 289);
             this.fastColoredTextBox1.TabIndex = 0;
-            this.fastColoredTextBox1.Text = resources.GetString("fastColoredTextBox1.Text");
+            this.fastColoredTextBox1.Text = "<!--INICIO-->";
             this.fastColoredTextBox1.WordWrap = true;
             this.fastColoredTextBox1.WordWrapIndent = 1;
             this.fastColoredTextBox1.Zoom = 100;
@@ -467,7 +469,7 @@
             this.htmlPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.htmlPreview.Location = new System.Drawing.Point(0, 0);
             this.htmlPreview.Name = "htmlPreview";
-            this.htmlPreview.Size = new System.Drawing.Size(503, 287);
+            this.htmlPreview.Size = new System.Drawing.Size(503, 289);
             this.htmlPreview.TabIndex = 0;
             this.htmlPreview.ZoomFactor = 1D;
             // 
@@ -494,6 +496,7 @@
             this.colorPreviewPanel.Name = "colorPreviewPanel";
             this.colorPreviewPanel.Size = new System.Drawing.Size(30, 30);
             this.colorPreviewPanel.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.colorPreviewPanel, "Cor principal a ser aplicada em conteúdo gerado");
             this.colorPreviewPanel.DoubleClick += new System.EventHandler(this.colorPreviewPanel_DoubleClick);
             // 
             // MSPAtoolBar
@@ -515,6 +518,8 @@
             this.toolStripLabel1,
             this.ChatCharName,
             this.createChatTextBtn,
+            this.toolStripSeparator3,
+            this.ChatOptions,
             this.toolStripSeparator2,
             this.toolStripLabel4,
             this.cssEffectSelector,
@@ -523,7 +528,7 @@
             this.MSPAtoolBar.Location = new System.Drawing.Point(38, 0);
             this.MSPAtoolBar.Name = "MSPAtoolBar";
             this.MSPAtoolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MSPAtoolBar.Size = new System.Drawing.Size(737, 36);
+            this.MSPAtoolBar.Size = new System.Drawing.Size(766, 36);
             this.MSPAtoolBar.Stretch = true;
             this.MSPAtoolBar.TabIndex = 2;
             this.MSPAtoolBar.Text = "toolStrip1";
@@ -605,6 +610,7 @@
             this.CreateChatSystemBtn.Name = "CreateChatSystemBtn";
             this.CreateChatSystemBtn.Size = new System.Drawing.Size(23, 33);
             this.CreateChatSystemBtn.Text = "toolStripButton2";
+            this.CreateChatSystemBtn.ToolTipText = "Botão para gerar o sistema de chat";
             this.CreateChatSystemBtn.Click += new System.EventHandler(this.CreateChatSystemBtn_Click);
             // 
             // ColorPickerBtn
@@ -628,6 +634,7 @@
             this.ChatCharName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ChatCharName.Name = "ChatCharName";
             this.ChatCharName.Size = new System.Drawing.Size(116, 36);
+            this.ChatCharName.ToolTipText = "Nome aplicado no sistema de chat";
             // 
             // createChatTextBtn
             // 
@@ -637,7 +644,24 @@
             this.createChatTextBtn.Name = "createChatTextBtn";
             this.createChatTextBtn.Size = new System.Drawing.Size(23, 33);
             this.createChatTextBtn.Text = "toolStripButton2";
+            this.createChatTextBtn.ToolTipText = "Botão para gerar mensagens no sistema de chat";
             this.createChatTextBtn.Click += new System.EventHandler(this.createChatTextBtn_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 36);
+            // 
+            // ChatOptions
+            // 
+            this.ChatOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ChatOptions.Image = global::WebComic_Editor.Properties.Resources.Settings;
+            this.ChatOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ChatOptions.Name = "ChatOptions";
+            this.ChatOptions.Size = new System.Drawing.Size(23, 33);
+            this.ChatOptions.Text = "Options";
+            this.ChatOptions.ToolTipText = "Ativar efeito alternativo";
+            this.ChatOptions.Click += new System.EventHandler(this.ChatOptions_Click);
             // 
             // toolStripSeparator2
             // 
@@ -665,6 +689,7 @@
             this.cssEffectSelector.Name = "cssEffectSelector";
             this.cssEffectSelector.Size = new System.Drawing.Size(121, 36);
             this.cssEffectSelector.Text = "glitch";
+            this.cssEffectSelector.ToolTipText = "Efeito aplicado no texto selecionado";
             // 
             // EffectBtn
             // 
@@ -674,6 +699,7 @@
             this.EffectBtn.Name = "EffectBtn";
             this.EffectBtn.Size = new System.Drawing.Size(23, 33);
             this.EffectBtn.Text = "toolStripButton1";
+            this.EffectBtn.ToolTipText = "Botão para aplicar efeito no texto selecionado";
             this.EffectBtn.Click += new System.EventHandler(this.EffectBtn_Click);
             // 
             // menuStrip2
@@ -1143,6 +1169,7 @@
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.sobreToolStripMenuItem.Text = "Sobre";
+            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // splitContainer7
             // 
@@ -1365,6 +1392,8 @@
         private System.Windows.Forms.ToolStripButton EffectBtn;
         private System.Windows.Forms.ToolStripMenuItem bonitificarHTMLToolStripMenuItem;
         private Microsoft.Web.WebView2.WinForms.WebView2 PagePreview;
+        private System.Windows.Forms.ToolStripButton ChatOptions;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 

@@ -39,7 +39,7 @@ namespace WebComic_Editor.Class
 
             string text = "<div class=\"picto\">\r\n\r\n<div class=\"enter\">Now entering: CHAT</div>\r\n\r\n" +
                 "<!--MENSAGENS AQUI, JÁ ADICIONAMOS 1, USE O BOTÃO DE CRIAR MAIS MENSAGENS-->" +
-                "<div style=\"--col: " + hex + "\"><div>" + charName + "</div> " + selectedText + " </div>\r\n\r\n" +
+                "<div style=\"--col: " + hex + "\"><div>" + charName + "</div><!-- TEXTO AQUI--> " + selectedText + " </div>\r\n\r\n" +
                 "</div>\r\n";
             //XElement.Parse(text).ToString();
             return text;

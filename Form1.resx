@@ -144,10 +144,9 @@
         CgAAAAAAAAAAjQABAAH4/////P///woAAAAAAAAAAKQAAQAB9/////z///8KAAAAAAAAAACWAAEACw==
 </value>
   </data>
-  <data name="fastColoredTextBox1.Text" xml:space="preserve">
-    <value>
-&lt;span&gt;&lt;br&gt;&lt;img src="https://file.garden/W8aVyswzE0BjIquG/VastError/00004.gif" class="major"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Oque você sabe? Ele estava completamente certo. Na verdade, ele estava mais do que certo. Isso foi PIOR do que a sua tentativa original! Como isso é possível?&lt;br&gt;&lt;br&gt;Vamos apenas ir identificar seu nome real antes de se envergonhar ainda mais.&lt;/span&gt;</value>
-  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>363, 17</value>
+  </metadata>
   <metadata name="MSPAtoolBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>460, 17</value>
   </metadata>
@@ -174,9 +173,6 @@
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>363, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>41</value>

@@ -33,6 +33,35 @@ namespace WebComic_Editor.Class
 
             return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
+        public static string ShowAbout()
+        {
+            string text = "";
+            Form prompt = new Form()
+            {
+                AutoSize = true,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = "Sobre",
+                
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            text += "Atalhos\r\n\r\n" +
+                "CTRL+Q = Criar sistema de chat\r\n" +
+                "CTRL+W = Criar sistema de mensagem\r\n" +
+                "CTRL+E = Aplicar efeito no texto selecionado*" +
+                "ENTER/RETURN = Add <br> para quebrar linha no HTML" +
+                "SHIFT+ENTER/RETURN = troca de linha no editor SEM add <br>" +
+                "\r\n\r\n" +
+                "Os botões possuem DICAS ou DESCRIÇÃO para entender como a ferramenta funciona\r\n" +
+                "O programa não salva automaticamente, e não tem ctrl+s, deve salvar em file>save, ele ira salvar na pasta 'save' na pasta de instalação" +
+                "";
+            Label textLabel = new Label() {Top = 20, AutoSize = true, Text = text };
+            Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 200, DialogResult = DialogResult.OK };
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(textLabel);
+            prompt.AcceptButton = confirmation;
+            return prompt.ShowDialog() == DialogResult.OK ? textLabel.Text : "";
+        }
         public static string SkorperLogDiv()
         {
             string text = "<div class=\"spoiler closed\">\r\n" +
@@ -64,10 +93,15 @@ namespace WebComic_Editor.Class
                 "</div>\r\n";
             return text;
         }
-        public static string AmongUsChat(string charName)
+        public static string AmongUsChat(string charName, bool option = false)
         {
-            string text = "\r\n<div class=\"us\" <!--class=\"you\"style=\"--icon: url(ICON HERE)--> \">\r\n" +
-                "<name>"+charName+ "</name><br>\r\nTEXT HERE\r\n</div>\r\n";
+            string addOption = "<div class=\"us\"";
+            if (option)
+            {
+                addOption = "<div class=\"you\"";
+            }
+            string text = "\r\n"+addOption+" style=\"--icon: url(<!--ICON HERE-->)\">\r\n" +
+                "<name>"+charName+ "</name><br>\r\n<!--TEXT HERE-->\r\n\r\n</div>\r\n";
             return text;
         }
         public static string Earthbound()

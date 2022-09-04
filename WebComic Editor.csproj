@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -147,18 +147,18 @@
     <None Include="www\files\ats.js.download">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="www\files\comicUtils.js.download">
+    <Content Include="www\files\comicUtils.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="www\files\dcrc.css.map">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="www\files\gpt.js.download">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="www\files\jquery.min.js.download">
+    <Content Include="www\files\jquery.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="www\files\js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -191,6 +191,7 @@
   <ItemGroup>
     <None Include="Resources\Button.png" />
     <None Include="Resources\Effect.png" />
+    <None Include="Resources\Settings.png" />
     <Content Include="www\files\characters.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
